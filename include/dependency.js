@@ -5,10 +5,11 @@ const packageInfo = require('../package.json');
 const { yellow, red, green } = require('./util/console');
 
 module.exports = hexo => {
-    function checkDependency(name, reqVer) {
+    function checkDependency(name, _reqVer) {
         try {
             require.resolve(name);
             const version = require(name + '/package.json').version;
+            const reqVer = _reqVer.split('#').pop();
             if (!semver.satisfies(version, reqVer)) {
                 logger.error(`Package ${yellow(name)}'s version (${yellow(version)}) does not satisfy the required version (${red(reqVer)}).`);
                 return false;
