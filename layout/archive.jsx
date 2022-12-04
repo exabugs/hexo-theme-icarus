@@ -8,7 +8,13 @@ module.exports = class extends Component {
         const { config, page, helper } = this.props;
         const { url_for, __, date_xml, date } = helper;
 
-        const format = config.month_format || 'MMMM YYYY';
+        let format = 'MMMM YYYY';
+        if (Array.isArray(config.widgets)) {
+            const widget = config.widgets.find(widget => widget.type === 'archives');
+            if (widget) {
+                format = widget.format;
+            }
+        }
 
         const language = page.lang || page.language || config.language;
 
