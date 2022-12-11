@@ -29,7 +29,7 @@
   "dependencies": {
     "bulma-stylus": "0.8.0",
     "deepmerge": "^4.2.2",
-    "hexo": "^6.0.0",
+    "hexo": "git+https://github.com/exabugs/hexo.git#6.3.1001",
     "hexo-component-inferno": "git+https://github.com/exabugs/hexo-component-inferno.git#2.0.1004",
     "hexo-log": "^3.0.0",
     "hexo-pagination": "^2.0.0",
