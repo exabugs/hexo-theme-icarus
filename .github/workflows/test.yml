@@ -10,13 +10,13 @@ jobs:
         node-version: [12, 14, 16]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: hexojs/hexo-starter
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: themes/icarus
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           repository: SukkaLab/hexo-many-posts
           path: source/_posts/hexo-many-posts
