@@ -20,7 +20,7 @@ jobs:
         with:
           repository: SukkaLab/hexo-many-posts
           path: source/_posts/hexo-many-posts
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - uses: actions/cache@v3
