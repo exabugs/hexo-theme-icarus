@@ -1,5 +1,6 @@
 const moment = require('moment');
 const { Component, Fragment } = require('inferno');
+const { toMomentLocale } = require('hexo/lib/plugins/helper/date');
 const Paginator = require('hexo-component-inferno/lib/view/misc/paginator');
 const ArticleMedia = require('hexo-component-inferno/lib/view/common/article_media');
 
@@ -16,7 +17,7 @@ module.exports = class extends Component {
             }
         }
 
-        const language = page.lang || page.language || config.language;
+        const language = toMomentLocale(page.lang || page.language || config.language);
 
         function renderArticleList(posts, year, month = null) {
             const time = moment([page.year, page.month ? page.month - 1 : null].filter(i => i !== null));
